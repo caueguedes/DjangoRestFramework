@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../website/jurScraping/.idea/jurScraping.iml" filepath="$PROJECT_DIR$/../../website/jurScraping/.idea/jurScraping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/restFrame.iml" filepath="$PROJECT_DIR$/.idea/restFrame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../website/studies/.idea/studies.iml" filepath="$PROJECT_DIR$/../../website/studies/.idea/studies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../website/webScraping/.idea/webScraping.iml" filepath="$PROJECT_DIR$/../../website/webScraping/.idea/webScraping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../website/website/.idea/website.iml" filepath="$PROJECT_DIR$/../../website/website/.idea/website.iml" />
+    </modules>
+  </component>
+</project>

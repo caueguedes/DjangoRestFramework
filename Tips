@@ -1,0 +1,44 @@
+from snippets.models import Snippet
+from snippets.serializers import SnippetSerializer
+from rest_framework.renderers import JSONRenderer
+from rest_framework.parsers import JSONParser
+
+snippet = Snippet(code='print "hello, world"\n')
+snippet.save()
+
+
+###create JSON---------------------------------------------------------------
+content = JSONRenderer().render(serializer.data)
+content
+# '{"id": 2, "title": "", "code": "print \\"hello, world\\"\\n", "linenos": false, "language": "python", "style": "friendly"}'
+
+###Deserialization JSON-----------------------------------------------------
+from django.utils.six import BytesIO
+
+stream = BytesIO(content)
+data = JSONParser().parse(stream)
+
+    ### Validação------
+    serializer = SnippetSerializer(data=data)
+    serializer.is_valid()
+    # True
+
+    serializer.validated_data
+    # OrderedDict([('title', ''), ('code', 'print "hello, world"\n'), ('linenos', False), ('language', 'python'), ('style', 'friendly')])
+
+    serializer.save()
+    # <Snippet: Snippet object>
+
+
+### Representation ModelSerializer-----------------------------------------
+from snippets.serializers import SnippetSerializer
+serializer = SnippetSerializer()
+print(repr(serializer))
+
+# SnippetSerializer():
+#    id = IntegerField(label='ID', read_only=True)
+#    title = CharField(allow_blank=True, max_length=100, required=False)
+#    code = CharField(style={'base_template': 'textarea.html'})
+#    linenos = BooleanField(required=False)
+#    language = ChoiceField(choices=[('Clipper', 'FoxPro'), ('Cucumber', 'Gherkin'), ('RobotFramework', 'RobotFramework'), ('abap', 'ABAP'), ('ada', 'Ada')...
+#    style = ChoiceField(choices=[('autumn', 'autumn'),

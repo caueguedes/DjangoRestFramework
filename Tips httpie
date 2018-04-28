@@ -1,0 +1,22 @@
+### Simple Request
+    http http://127.0.0.1:8000/snippets/
+    http http://127.0.0.1:8000/snippets/1
+
+### Control Format Response
+    http http://127.0.0.1:8000/snippets/1 Accept:application/json
+    http http://127.0.0.1:8000/snippets/1 Accept:application/html
+
+    http http://127.0.0.1:8000/snippets.json
+    http http://127.0.0.1:8000/snippets.api
+
+
+### Control Format Request
+    http --form POST http://127.0.0.1:8000/snippets/ code="print 123"
+    http --json POST http://127.0.0.1:8000/snippets/ code="print 456"
+    http --debug http://127.0.0.1:8000/snippets/ code="print 456"
+
+
+### Authentication with API
+    admin, password = nome, senha
+    http POST http://127.0.0.1:8000/snippets/ code="print 123"
+    http -a admin:password123 POST http://127.0.0.1:8000/snippets/ code="print 789"
